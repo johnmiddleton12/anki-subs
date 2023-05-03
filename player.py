@@ -731,7 +731,7 @@ def update_media():
         return
     
     data = []
-    for model_name in ["movies2anki (add-on)", "movies2anki - subs2srs", "movies2anki - subs2srs (video)", "movies2anki - subs2srs (audio)"]:
+    for model_name in ["movies2anki (add-on)", "movies2anki - subs2srs", "movies2anki - subs2srs (video)", "movies2anki - subs2srs (audio)", "movies2anki - alternative"]:
         m = mw.col.models.byName(model_name)
 
         if m == None:
@@ -752,7 +752,7 @@ def update_media():
             mw.col.models.save(m)
             mw.progress.finish()
 
-        if "Video Sound" not in mw.col.models.fieldNames(m) and m["name"] in ["movies2anki (add-on)", "movies2anki - subs2srs (video)"]:
+        if "Video Sound" not in mw.col.models.fieldNames(m) and m["name"] in ["movies2anki (add-on)", "movies2anki - subs2srs (video)", "movies2anki - alternative"]:
             mw.progress.start()
             fm = mw.col.models.newField("Video Sound")
             mw.col.models.addField(m, fm)
@@ -765,7 +765,7 @@ def update_media():
 
             if note["Audio Sound"] == "" or not os.path.exists(note["Audio"]):
                 data.append(note)
-            elif m["name"] in ["movies2anki (add-on)", "movies2anki - subs2srs (video)"] and (note["Video Sound"] == "" or not os.path.exists(note["Video"])):
+            elif m["name"] in ["movies2anki (add-on)", "movies2anki - subs2srs (video)", "movies2anki - alternative"] and (note["Video Sound"] == "" or not os.path.exists(note["Video"])):
                 data.append(note)
 
     if len(data) == 0:

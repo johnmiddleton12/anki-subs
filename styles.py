@@ -234,3 +234,74 @@ subs2srs_audio_back_template = """
 {{/Meaning}}
 <div class="notes">{{Notes}}</div>
 """
+
+#  ------------------------------------- #
+
+alternative_front_template = """
+<video src="{{Video}}" poster="{{Id}}.jpg" playsinline autoplay onclick="this.currentTime=0;this.play()"></video>
+"""
+
+alternative_css = """
+.card {
+ font-family: arial;
+ font-size: 20px;
+ text-align: center;
+ color: black;
+ background-color: white;
+}
+
+html {
+ height: 100%;
+}
+
+body {
+ height: calc(100% - 2em);
+}
+
+.expression, .meaning {
+ margin: 10px;
+}
+
+.expression {
+ font-size: 22px;
+}
+
+.meaning {
+ font-size: 18px;
+ color: #000080;
+}
+
+.notes {
+ font-size: 18px;
+}
+
+.media {
+ margin: 4px;
+}
+
+.snapshot {
+ margin-bottom: 10px;
+}
+
+img {
+ max-width: 100%;
+ height: auto;
+}
+
+video {
+ max-width: 100%;
+}
+
+.mobile #content {
+ margin: 0;
+}
+"""
+
+alternative_back_template = """
+<video src="{{Video}}" poster="{{Id}}.jpg" playsinline autoplay onclick="this.currentTime=0;this.play()"></video>
+<div class="expression">{{Expression}}</div>
+{{#Meaning}}
+<div class="meaning">{{Meaning}}</div>
+{{/Meaning}}
+<div class="notes">{{Notes}}</div>
+"""

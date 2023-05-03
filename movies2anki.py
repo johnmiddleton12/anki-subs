@@ -573,7 +573,7 @@ class Model(object):
         self.audio_id = 0
         self.deck_name = ""
         self.model_name = "movies2anki (add-on)"
-        self.default_model_names = ["movies2anki (add-on)", "movies2anki - subs2srs", "movies2anki - subs2srs (video)", "movies2anki - subs2srs (audio)"]
+        self.default_model_names = ["movies2anki (add-on)", "movies2anki - subs2srs", "movies2anki - subs2srs (video)", "movies2anki - subs2srs (audio)", "movies2anki - alternative"]
 
         self.en_srt = ""
         self.ru_srt = ""
@@ -822,6 +822,24 @@ class Model(object):
         mw.col.models.addTemplate(model, t)
         mw.col.models.add(model)
 
+    def create_alternative_default_model(self):
+        model = mw.col.models.new(self.model_name)
+        model['css'] = styles.alternative_css.strip()
+        mw.col.models.addField(model, mw.col.models.newField("Id"))
+        mw.col.models.addField(model, mw.col.models.newField("Source"))
+        mw.col.models.addField(model, mw.col.models.newField("Path"))
+        mw.col.models.addField(model, mw.col.models.newField("Audio"))
+        mw.col.models.addField(model, mw.col.models.newField("Video"))
+        mw.col.models.addField(model, mw.col.models.newField("Video Sound"))
+        mw.col.models.addField(model, mw.col.models.newField("Expression"))
+        mw.col.models.addField(model, mw.col.models.newField("Meaning"))
+        mw.col.models.addField(model, mw.col.models.newField("Notes"))
+        t = mw.col.models.newTemplate("Card 1")
+        t['qfmt'] = styles.alternative_front_template.strip()
+        t['afmt'] = styles.alternative_back_template.strip()
+        mw.col.models.addTemplate(model, t)
+        mw.col.models.add(model)
+
     def write_tsv_file(self, deck_name, en_subs, ru_subs, directory):
         # prefix = format_filename(deck_name)
         prefix = format_filename(os.path.splitext(os.path.basename(self.video_file))[0])
@@ -832,6 +850,8 @@ class Model(object):
         if not mw.col.models.byName(self.model_name):
             if self.model_name.startswith("movies2anki - subs2srs"):
                 self.create_subs2srs_default_model()
+            elif self.model_name.startswith("movies2anki - alternative"):
+                self.create_alternative_default_model()
             else:
                 self.create_new_default_model()
 
