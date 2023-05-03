@@ -18,3 +18,7 @@ All credit to original creator ([repo](https://github.com/kelciour/movies2anki))
 Simply clone the repo into your `Anki/addons` folder, and the addon should be enabled upon an Anki restart
 
 Follow the [original](https://ankiweb.net/shared/info/939347702) instructions to set up, and to use the custom note type, select `movies2anki - alternative` in the `Generate Video Cards` interface. Once cards are generated, run `Generate Mobile Cards` to create the appropriate `webm` files.
+
+### To-Do
+
+- Add more functionality to in-anki player, can bind buttons to modify html video info
