@@ -10,10 +10,10 @@ All credit to original creator ([repo](https://github.com/kelciour/movies2anki))
 
 ### Relevant Links
 
-movies2anki - [https://ankiweb.net/shared/info/939347702](https://ankiweb.net/shared/info/939347702)
-sample deck with harry potter in french - [https://www.reddit.com/r/Anki/comments/yna6gq/comment/ix874na](https://www.reddit.com/r/Anki/comments/yna6gq/comment/ix874na)
-substudy - [http://www.randomhacks.net/substudy](http://www.randomhacks.net/substudy/)
-subs2srs - [https://subs2srs.sourceforge.net](https://subs2srs.sourceforge.net/)
+- movies2anki - [https://ankiweb.net/shared/info/939347702](https://ankiweb.net/shared/info/939347702)
+- sample deck with harry potter in french - [https://www.reddit.com/r/Anki/comments/yna6gq/comment/ix874na](https://www.reddit.com/r/Anki/comments/yna6gq/comment/ix874na)
+- substudy - [http://www.randomhacks.net/substudy](http://www.randomhacks.net/substudy/)
+- subs2srs - [https://subs2srs.sourceforge.net](https://subs2srs.sourceforge.net/)
 
 ### Changes
 
