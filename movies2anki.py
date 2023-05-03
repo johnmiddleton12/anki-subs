@@ -617,7 +617,8 @@ class Model(object):
         self.is_create_clips_with_hardsub = False
         self.hardsub_style = "FontName=Arial,FontSize=24,OutlineColour=&H5A000000,BorderStyle=3"
         self.is_ignore_sdh_subtitle = True
-        self.is_add_dir_to_media_path = False
+        self.is_add_dir_to_media_path = True
+        # self.is_add_dir_to_media_path = False
 
         # self.join_lines_that_end_with = r"\.\.\. , → [\u4e00-\u9fef]"
         self.join_lines_that_end_with = r"\.\.\. , →"
@@ -860,6 +861,11 @@ class Model(object):
             video = prefix + "_" + start_time + "-" + end_time + filename_suffix + "." + config["video extension"]
                
             if self.is_add_dir_to_media_path:
+                
+                # check if folder exists
+                if not os.path.exists(os.path.join(directory, prefix + ".media")):
+                    os.makedirs(os.path.join(directory, prefix + ".media"))
+
                 sound = prefix + ".media/" + sound
                 video = prefix + ".media/" + video
 
