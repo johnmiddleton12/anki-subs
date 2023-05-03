@@ -34,3 +34,4 @@ Follow the [original](https://ankiweb.net/shared/info/939347702) instructions to
 
 - Add more functionality to in-anki player, can bind buttons to modify html video info
 - set up workflow for Anki for ios viewing
+- remove mp3 gen
