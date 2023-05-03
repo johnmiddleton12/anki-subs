@@ -6,6 +6,13 @@ Adds another note type with slightly different formatting and omitted script.
 
 All credit to original creator ([repo](https://github.com/kelciour/movies2anki)), this is just a few modifications that I made for personal use
 
+### Changes
+
+- `movies2anki - alternative` note type within video card creation
+  - Modified card template for viewing video within Anki desktop, as opposed to within mkv
+  - `r` to replay video within card template
+- Config changes to store in individual folder, and save as `.webm`
+
 ### Usage
 
 Simply clone the repo into your `Anki/addons` folder, and the addon should be enabled upon an Anki restart

@@ -239,6 +239,16 @@ subs2srs_audio_back_template = """
 
 alternative_front_template = """
 <video src="{{Video}}" poster="{{Id}}.jpg" playsinline autoplay onclick="this.currentTime=0;this.play()"></video>
+<script>
+    window.onkeyup = function(e) {
+        var key = e.keyCode ? e.keyCode : e.which;
+        if (key == 82) {
+            video = document.getElementsByTagName('video')[0];
+			video.currentTime=0;
+            video.play();
+        }
+    }
+</script>
 """
 
 alternative_css = """
