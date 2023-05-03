@@ -252,66 +252,73 @@ alternative_front_template = """
 """
 
 alternative_css = """
+:root {
+ --primary-color: black;
+ --secondary-color: #555;
+ --meaning-color: #000080;
+ --background-color: white;
+}
+
+/* .nightMode */
+:root {
+ --primary-color: white;
+ --secondary-color: #aaa;
+ --meaning-color: #9bc0dd;
+ --background-color: #2f2f31;
+}
+
 .card {
  font-family: arial;
  font-size: 20px;
  text-align: center;
- color: black;
- background-color: white;
-}
-
-html {
- height: 100%;
-}
-
-body {
- height: calc(100% - 2em);
-}
-
-.expression, .meaning {
- margin: 10px;
+ color: var(--primary-color);
+ background-color: var(--background-color);
 }
 
 .expression {
  font-size: 22px;
+ color: var(--primary-color);
+ margin: 10px 0;
 }
 
 .meaning {
  font-size: 18px;
- color: #000080;
+ color: var(--meaning-color);
+ margin: 10px 0;
 }
 
 .notes {
+ color: var(--secondary-color);;
  font-size: 18px;
-}
-
-.media {
- margin: 4px;
-}
-
-.snapshot {
- margin-bottom: 10px;
-}
-
-img {
- max-width: 100%;
- height: auto;
 }
 
 video {
  max-width: 100%;
 }
 
-.mobile #content {
- margin: 0;
+hr#answer {
+ margin-top: 12px;
+ margin-bottom: 16px;
+ height: 1px;
+ background-color: #9a9a9a;
+ border: none;
 }
 """
 
 alternative_back_template = """
-<video src="{{Video}}" poster="{{Id}}.jpg" playsinline autoplay onclick="this.currentTime=0;this.play()"></video>
+{{FrontSide}}
+
+<hr id="answer">
+
+{{#Expression}}
 <div class="expression">{{Expression}}</div>
+{{/Expression}}
+
+{{#Notes}}
+<div class="notes">{{Notes}}</div>
+{{/Notes}}
+
 {{#Meaning}}
 <div class="meaning">{{Meaning}}</div>
 {{/Meaning}}
-<div class="notes">{{Notes}}</div>
 """
